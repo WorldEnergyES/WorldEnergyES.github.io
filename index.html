@@ -12,7 +12,7 @@
 	<br/>
 <div style="float:right">
 	<h1 id="Date"> </h1>
-	<p> <h1 id="Countdown" style="background-color:black; color: white"> </h1>
+	<p> <h1 id="countdown" style="background-color:black; color: white"> </h1>
 	<h1 style="background-color:black; color: white"> Days Left in the Year </h1></p>
 
 </div>
@@ -22,12 +22,36 @@
 	var d = new Date();
 	document.getElementById("Date").innerHTML = d.toDateString();
 	
-	var end = new Date('12/31/2017', 'Countdown');
-	var distance = end - d;
+    var end = new Date('12/31/2017 10:1 AM');
 
-    	var _day = 86400000;
-	var days = Math.floor(distance / _day);
-	document.getElementById("Countdown").innerHTML = days;
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        document.getElementById('countdown').innerHTML = days + 'days ';
+        document.getElementById('countdown').innerHTML += hours + 'hrs ';
+        document.getElementById('countdown').innerHTML += minutes + 'mins ';
+        document.getElementById('countdown').innerHTML += seconds + 'secs';
+    }
+
+    timer = setInterval(showRemaining, 1000);
 </script>
 
 
