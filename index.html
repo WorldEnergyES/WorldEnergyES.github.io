@@ -22,7 +22,7 @@
 	var d = new Date();
 	document.getElementById("Date").innerHTML = d.toDateString();
 	
-	var end = new Date('12/31/2017');
+	var end = new Date('12/31/2017', 'Countdown');
 	var distance = end - d;
 	var days = Math.floor(distance / _day);
 	document.getElementById("Countdown").innerHTML = days;
