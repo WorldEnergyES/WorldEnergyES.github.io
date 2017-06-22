@@ -24,6 +24,10 @@
 	
 	var end = new Date('12/31/2017', 'Countdown');
 	var distance = end - d;
+	var _second = 1000;
+   	var _minute = _second * 60;
+    	var _hour = _minute * 60;
+    	var _day = _hour * 24;
 	var days = Math.floor(distance / _day);
 	document.getElementById("Countdown").innerHTML = days;
 </script>
