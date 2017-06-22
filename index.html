@@ -12,18 +12,20 @@
 	<br/>
 <div style="float:right">
 	<h1 id="Date"> </h1>
-	<p> <table>
+	<h1> <table>
 		<tr>
-			<th style="background-color:black; color: white"> 23 </th>
-			<th> Days Left in the Year </th>
+			<th style="background-color:black; color: white" id="Days_Remain">  </th>
+			<th style="background-color:black; color: white"> Days Left in the Year </th>
 		</tr>
-	</p> </table>
+	</table> </h1>
 </div>
 
 
 <script>
 	var d = new Date();
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 	document.getElementById("Date").innerHTML = d.toDateString();
+	document.getElementById("Days_Remain").innerHTML = days + "d "
 </script>
 
 
