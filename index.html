@@ -12,8 +12,10 @@
 	<br/>
 <div style="float:right">
 	<h1 id="Date"> </h1>
-	<p> <h1 id="countdown" style="background-color:black; color: white"> </h1>
-	<h1 style="background-color:black; color: white"> Days Left in the Year </h1></p>
+	<table>
+		<tr>
+			<th id="countdown" style="background-color:black; color: white"> </th>
+			<th style="background-color:black; color: white"> Days Left in the Year </th>
 
 </div>
 
@@ -46,9 +48,6 @@
         var seconds = Math.floor((distance % _minute) / _second);
 
         document.getElementById('countdown').innerHTML = days + 'days ';
-        document.getElementById('countdown').innerHTML += hours + 'hrs ';
-        document.getElementById('countdown').innerHTML += minutes + 'mins ';
-        document.getElementById('countdown').innerHTML += seconds + 'secs';
     }
 
     timer = setInterval(showRemaining, 1000);
