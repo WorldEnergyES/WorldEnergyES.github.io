@@ -1,0 +1,149 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @ZCorso
+ Sign out
+ Watch 0
+  Star 0  Fork 0 ZCorso/WorldEnergyES.github.io
+ Code  Issues 1  Pull requests 0  Projects 0  Wiki  Insights  Settings
+Branch: master Find file Copy pathWorldEnergyES.github.io/dashboard.html
+fce814a  2 minutes ago
+@ZCorso ZCorso Update dashboard.html
+1 contributor
+RawBlameHistory     
+140 lines (119 sloc)  4.21 KB
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex">
+<script language="Javascript" type="text/javascript" src="http://pub31.bravenet.com/passwd/jsnorightclick.php?usernum=2606067006"></script>
+<script language="Javascript" type="text/javascript" src="http://pub31.bravenet.com/passwd/jsverify.php?usernum=2606067006"></script>
+<noscript>
+  <meta http-equiv="refresh" content="0; url=https://pub31.bravenet.com/passwd/verify.php?usernum=2606067006"/>
+	<body style="display:none;">
+</noscript>
+	
+<!--KLIPFOLIO PUBLISHED LINK SLIDESHOW CODE
+Last updated: December 14, 2016
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+/*Enter links and display interval in ms below*/
+var links = [
+"https://app.klipfolio.com/published/05e66246b2371ad1f1b17b14b5c9220c/ma-goal-"
+];
+var interval=60000;//default 90seconds
+/*Function that alternates between visible published links
+@param links: list of published link URLS to alternate through
+@param interval: interval in ms between switches(eg 6000=6s)
+*/
+function playShow(links, interval)
+{
+ //First add all the links, as divs with iframes inside of them
+ //First link is default visible, others are not
+ $(document).ready(function()
+ {
+ for(var i = 0; i < links.length; i++) 
+ {
+ if(i==0)//make first link visible
+ {
+ $('body').append
+ (
+ '<div style="border:none;height:100%" id="'+ i +'"><iframe style="height:100%;width:100%;border:none;" src="'+ links[i]+'" ></iframe>'+'</div>'
+ );
+ }
+ else
+ {
+ $('body').append//make other links invisible at first 
+ (
+ '<div style="height:0%;width:0%;border:none;" id="'+ i +'"><iframe style="height:100%;width:100%;border:none;" src="'+ links[i]+'"></iframe>'+'</div>'
+ );
+ }
+ 
+ }
+ });
+ //Alternate between them every interval/1000 seconds
+ var i2=0;
+ var renew = setInterval(function()
+ {
+ if(links.length-1 == i2){
+ i2 = 0;
+ }
+ else
+ {
+ i2++;
+ }
+ for(var j=0; j< links.length; j++)
+ {
+ if(i2==j)
+ {
+ document.getElementById(j).setAttribute("style","width:100%;height:100%");
+ }
+ else
+ {
+ document.getElementById(j).setAttribute("style","width:0px;height:0px");
+ }
+ }
+ },interval);
+}
+playShow(links,interval);
+</script>
+<!--END OF SLIDESHOW CODE-->
+	
+<style>
+	ul {
+    		list-style-type: none;
+    		margin: 0;
+    		padding: 0;
+    		overflow: hidden;
+    		background-color: #333;
+	}
+	li {
+    		float: left;
+	}
+	li a {
+    		display: block;
+    		color: white;
+    		text-align: center;
+    		padding: 14px 16px;
+    		text-decoration: none;
+	}
+		li a:hover:not(.active) {
+   		 background-color: blue;
+	}
+	.active {
+    		background-color: blue;
+	}	
+</style>
+	
+<body style="height:10000px;">
+	<ul>
+		<li><a href="https://ZCorso.github.io/WorldEnergyES.github.io/dashboard.html"> Home </a></li>
+		<li><a href="https://ZCorso.github.io/WorldEnergyES.github.io/annual_summary.html"> Annual Summary </a></li>
+		<li><a href="https://ZCorso.github.io/WorldEnergyES.github.io/quarterly_summary.html"> Quarterly Summary </a></li>
+		<li><a href="https://ZCorso.github.io/WorldEnergyES.github.io/ES_summary.html"> Energy Specialist Summary </a></li>
+		<li><a href="https://ZCorso.github.io/WorldEnergyES.github.io/PM_summary.html"> Project Manager Summary </a></li>
+		<li><a href="https://ZCorso.github.io/WorldEnergyES.github.io/CT_summary.html"> CT Goals </a></li>
+		<li><a href="https://ZCorso.github.io/WorldEnergyES.github.io/MA_summary.html"> MA Goals </a></li>
+		<li><a href="https://ZCorso.github.io/WorldEnergyES.github.io/BDR_summary.html"> BDR Summary </a></li>
+	</ul>
+	
+
+</body>
+</html>
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
