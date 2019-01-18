@@ -17,7 +17,7 @@ Last updated: December 14, 2016
 
 /*Enter links and display interval in ms below*/
 var links = [
-"https://app.klipfolio.com/published/96799804d36139cbca8cbf1813dea032/yearly-cm-goals"
+"https://app.klipfolio.com/published/225da5fb532cb8979133fb329da9fbb1/eversource-kwh-wip"
 ];
 
 var interval=60000;//default 90seconds
